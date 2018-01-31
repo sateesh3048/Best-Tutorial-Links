@@ -5,5 +5,5 @@
  3) [Great Article on Functional/Pure/Presentational Components](https://hackernoon.com/react-stateless-functional-components-nine-wins-you-might-have-overlooked-997b0d933dbc)
  4) [Simple Article on Submit form data with React](https://blog.stvmlbrn.com/2017/04/07/submitting-form-data-with-react.html) 
  5) [Best Video Tutorial1 on Forms Validation](https://www.youtube.com/watch?v=Z5BAolQCJDI)
- 6)[Best Video Tutorial2 on Forms Validation](https://www.youtube.com/watch?v=_Dq8QnQtx5Y)
+ 6) [Best Video Tutorial2 on Forms Validation](https://www.youtube.com/watch?v=_Dq8QnQtx5Y)
  
