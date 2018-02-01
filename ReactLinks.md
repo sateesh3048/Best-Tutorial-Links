@@ -6,5 +6,10 @@
  4) [Simple Article on Submit form data with React](https://blog.stvmlbrn.com/2017/04/07/submitting-form-data-with-react.html) 
  5) [Best Video Tutorial1 on Forms Validation](https://www.youtube.com/watch?v=Z5BAolQCJDI)
  6) [Best Video Tutorial2 on Forms Validation](https://www.youtube.com/watch?v=_Dq8QnQtx5Y)
- 7) [Popular library in validating client side react forms](https://www.npmjs.com/package/validator)
+ 
+ 
+ ## Popular Third Party Libraries
+ 
+ 1) [Popular library in validating client side react forms](https://www.npmjs.com/package/validator)
+ 2) [Adding classnames dynamically using 'classnames' package](https://www.npmjs.com/package/classnames)
  
