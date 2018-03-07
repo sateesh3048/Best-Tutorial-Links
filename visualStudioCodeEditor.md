@@ -4,3 +4,4 @@
 
 1) Material Icon Theme
 2) Path AutoComplete
+3) Angular Essentials for angular 
