@@ -6,3 +6,4 @@
 2) Path AutoComplete
 3) Angular Essentials for angular 
 4) https://www.udemy.com/the-complete-guide-to-angular-2/learn/v4/questions/2813012
+5) Typescript importer plugin to autoload classnames
