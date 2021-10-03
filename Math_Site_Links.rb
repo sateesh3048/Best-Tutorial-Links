@@ -14,3 +14,6 @@ Horners method
 https://www.geeksforgeeks.org/horners-method-polynomial-evaluation/
 
 https://www.youtube.com/watch?v=Z393AcN_Gz0
+
+Convert Decimal to Binary number
+https://youtu.be/rsxT4FfRBaM
