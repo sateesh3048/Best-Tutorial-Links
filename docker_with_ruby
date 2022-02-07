@@ -10,7 +10,7 @@ apk add postgresql-dev
 
 Creating docker container with name  by exposing port and share volume
 
-docker run --name my_ruby3 -it  -p 3000:3000 -v c:\users\satee\desktop:/desktop ruby:3.1-alpine
+docker run -d --name my_ruby  --network mynet -it  -p 3000:3000 -v c:\users\satee\desktop:/desktop ruby:3.1-alpine 
 
 You need to run rails app by using this command
 
