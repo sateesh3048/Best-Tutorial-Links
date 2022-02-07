@@ -41,3 +41,11 @@ You need to run rails app by using this command
  >> Open postgres from command promt 
  
  psql -U postgres
+ 
+ >> Update database.yml file like below
+ 
+  host: my-postgres   (Important note: here host name is container name of postgres)
+  username: postgres
+  password: admin
+
+ 
