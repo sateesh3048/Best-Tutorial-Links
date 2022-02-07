@@ -20,3 +20,24 @@ bundle install
 You need to run rails app by using this command
 
  rails s -p 3000 -b 0.0.0.0
+
+
+>> Postgres running from docker
+
+ docker volume create pgdata
+
+>> Executing multilien command in windows command prompt (Running postgres image)
+
+   docker run -d ^
+        --name my-postgres ^
+        --network mynet ^
+        -p 5432:5432 ^
+        -v pgdata:/var/lib/postgresql/data ^
+        -e POSTGRES_PASSWORD=admin ^
+        -e POSTGRES_USER=postgres ^
+        -e POSTGRES_DB=postgres ^
+         postgres:14-alpine
+         
+ >> Open postgres from command promt 
+ 
+ psql -U postgres
