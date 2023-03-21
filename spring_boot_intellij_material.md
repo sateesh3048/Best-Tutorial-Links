@@ -24,3 +24,7 @@ To make the browser start automatically when you run the Spring Boot app in Inte
 
 Now, when you run the Spring Boot app, IntelliJ will automatically open the specified URL in the selected browser.
 
+
+
+## Add Json pretty print addon to see json in the best way!
+
