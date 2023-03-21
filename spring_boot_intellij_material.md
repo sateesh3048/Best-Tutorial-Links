@@ -28,3 +28,4 @@ Now, when you run the Spring Boot app, IntelliJ will automatically open the spec
 
 ## Add Json pretty print addon to see json in the best way!
 
+Add Json Formatter plugin in chrome
