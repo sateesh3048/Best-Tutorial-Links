@@ -28,4 +28,17 @@ Now, when you run the Spring Boot app, IntelliJ will automatically open the spec
 
 ## Add Json pretty print addon to see json in the best way!
 
+
+## Spring-boot-starter-actuator -> its useful for checking health of your application
+
+1. Add spring-boot-startor-actuator dependency in your pom.xml file
+2. management.endpoints.web.exposure.include=health,info,mappings (to expose health, info, mappings)
+3. To expose all end points management.endpoints.web.exposure.include=*
+4. To access health check localhost:8080/actuator/health
+5. To check complete info details localhost:8080/actuator/info -> by default its going to show empty json.
+   You need to information from application.properties file
+   info.app.name=springboot three app
+   info.app.description=its good app
+   info.app.version=0.0.1
+7. 
 Add Json Formatter plugin in chrome
