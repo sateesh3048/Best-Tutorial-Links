@@ -144,3 +144,10 @@ and here: *** https://stackoverflow.com/questions/3058/what-is-inversion-of-cont
 ## https://stackoverflow.com/questions/6550700/inversion-of-control-vs-dependency-injection
 
 ## https://jenkov.com/tutorials/dependency-injection/dependency-injection-replacing-factory-patterns.html
+
+
+## Spring Singleton scope  vs java single tone pattern.. clarification
+
+Here's a discussion on this topic: https://stackoverflow.com/a/48052897/1998950
+
+https://stackoverflow.com/questions/15252284/what-is-the-difference-between-a-spring-singleton-and-a-java-singeletondesign-p
