@@ -284,3 +284,19 @@ It may be hard to see the benefit of @Autowired and dependency injection in smal
 
 Let me know if that clears your doubt.
 
+
+## Difference between @Component and @RestController ?
+
+What does @RestController annotation do ?
+
+Hello Akhil, it marks a class that will be a bean but it also marks it that it will be responsible for triggering methods on specific URLs.
+So it is basically @Component + URL trigger of methods.
+
+and is @Component annotation is what we call IOC i.e. whichever class uses @Component it's object will be created automatically. Am I correct here?
+
+Correct. Any annotation will create those beans automatically @Bean, @Service, @Controller, @Component, @Repository.
+
+Also you mentioned we do not need @Autowired when we have single constructor then if we have multiple constructor can we add @Autowired on all of the constructor?
+
+Correct.
+
