@@ -28,6 +28,21 @@ Now, when you run the Spring Boot app, IntelliJ will automatically open the spec
 
 ## Add Json pretty print addon to see json in the best way!
 
+## Important maven commands
+
+1.mvn package => To create the package of maven project i.e its going to create jar / war file based on pom file config. its going to keep this file in target/name.jar
+
+### Run spring app using java jar file 
+  java -jar jar_file_name  => To run spring boot project from command line.
+   1. move to the target folder by using cd command  i.e cd target
+   2.  Now run jar file by using above command
+   3.  ctrl+c to stop the server
+ 
+ ### Run app using spring boot maven plugin 
+from the project root folder execute this command
+mvn spring-boot:run => its going to start the server
+
+
 
 ## Spring-boot-starter-actuator -> its useful for checking health of your application
 
@@ -42,3 +57,37 @@ Now, when you run the Spring Boot app, IntelliJ will automatically open the spec
    info.app.version=0.0.1
 7. 
 Add Json Formatter plugin in chrome
+
+
+## How does Spring boot link the jars with my code?
+
+Whatever these different functionalities spring boot has, ultimately everything is made up of java code right. Now whatever dependencies we include in our pom.xml, maven will download all those dependency jars for our project. Now when I  run my application, the main method will be executed. But I have just downloaded the jars, my code will still be the same, so how does the linking happen between my code & the jars that are downloaded i.e I want to know that just by downloading the dependency jars, how these different functionalities are added to my code?
+
+Answer :-
+
+So your question was never related to maven but to how does Spring applies security to the actuator just by adding a dependency without us writing any code, or similar situations.
+Since Spring is a big framework, you are getting a lot of things preconfigured.
+
+For example, you do not need to define with code InternalView resolver to display HTML, you will get it for free.
+
+You do not need to define component scanning for beans, you will get it for free.
+You do not need to write HTML for the login form for security, you will get it for free.
+
+That "free", is not without code, it is simply preconfigured, and all those configurations that you get for free come from Spring library.
+If you would try to implement any other InternalResolver, Security or component scanning, that is not from Spring ecosystem, it would not work.
+The same goes for applying security to actuators, once you add a security dependency, HTTPSecurity class will be initiated from this package
+
+    package org.springframework.security.config.annotation.web.builders;
+
+And it will run authorization on all HTTP requests, which includes all requests the same as actuator.
+Unless you decide to turn that off through application.properties file, that will be forwarded to this class
+
+    UserDetailsServiceAutoConfiguration 
+
+from this package
+
+    package org.springframework.boot.autoconfigure.security.servlet;
+
+So to answer your question, how it runs without any code.
+A lot of things in Spring Boot is already preconfigured, and it is already set in the source code/jars of the Spring.
+All these preconfigured features will work only with jars from the Spring ecosystem, it does not apply to anything external.
