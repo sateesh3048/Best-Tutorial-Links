@@ -91,3 +91,37 @@ from this package
 So to answer your question, how it runs without any code.
 A lot of things in Spring Boot is already preconfigured, and it is already set in the source code/jars of the Spring.
 All these preconfigured features will work only with jars from the Spring ecosystem, it does not apply to anything external.
+
+### Hi Chad. What's the use-case of IOC - or why do we have to externalize the construction and management of objects? Why is this configuration necessary? Why is DI not sufficient?
+
+>> What's the use-case of IOC - or why do we have to externalize the construction and management of objects?
+
+Yes, IoC is for externalizing the construction and management of objects.
+
+Normally in your code, you create objects like:
+
+TrackCoach myCoach = new TrackCoach();
+
+But using Spring ... it will handle the creation of objects for you. It is like outsourcing. instead of you doing the work ... outsource it and someone will do the work. this is handled by spring's object factory.
+
+So the Spring Framework does IOC for you.
+
+>> Why is this configuration necessary?
+
+To make your application flexible. When using Spring's XML based configuration, you can swap in new implementations without having to recompile your source code.
+
+>> Why is DI not sufficient?
+
+IoC and DI form a good partnernship. In order to get full power of DI you need a foundation of IoC.
+
+---
+
+If you'd like more details on IoC, check out these resources:
+
+Spring IOC
+
+- http://docs.spring.io/spring/docs/current/spring-framework-reference/html/beans.html
+
+The IOC Design Pattern
+
+- https://en.wikipedia.org/wiki/Inversion_of_control
