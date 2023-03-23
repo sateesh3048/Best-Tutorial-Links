@@ -246,3 +246,41 @@ https://stackoverflow.com/questions/9664810/spring-prototype-scope-use-cases
 https://stackoverflow.com/questions/21969044/when-to-use-spring-prototype-scope
 
 https://stackoverflow.com/questions/16058365/what-is-difference-between-singleton-and-prototype-bean
+
+
+## What's the difference between using @Autowired and new object creation?
+
+Autowired vs New Keyword
+0 upvotes
+Hello · Lecture 33
+· 3 years ago
+
+
+What's the difference between using
+
+@Autpwired
+
+private MyClass myclass ;
+
+
+and
+
+
+MyClass  myClass = new MyClass  ();
+
+I found the clue here
+https://stackoverflow.com/questions/30908648/spring-autowired-vs-using-new-keyword-to-create-object
+
+
+But what does this statement means?
+
+The typical use of @Autowire is to automatically fill a property, when initializing a bean, with a singleton dependency.
+
+Answer :-
+
+Behind the scenes, the @Autowired annotation will inject the dependency. The difference between @Autowired and the "new" keyword is the @Autowired annotation honors the scope of the bean. In Spring, all beans are singleton by default. As a result, with singleton scope, Spring will not create a "new" instance every time. Instead it will share the singleton reference.
+
+It may be hard to see the benefit of @Autowired and dependency injection in small examples. The real power of @Autowired and dependency injection is noticeable when working on real-time projects. We create multiple real-time projects in the course and you will get to see @Autowired and dependency injection in action.
+
+Let me know if that clears your doubt.
+
