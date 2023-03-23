@@ -139,4 +139,6 @@ The IOC Design Pattern
 
 You can read more about IOC here: https://en.wikipedia.org/wiki/Inversion_of_control
 
-and here: https://stackoverflow.com/questions/3058/what-is-inversion-of-control?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+and here: *** https://stackoverflow.com/questions/3058/what-is-inversion-of-control?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+
+## https://stackoverflow.com/questions/6550700/inversion-of-control-vs-dependency-injection
