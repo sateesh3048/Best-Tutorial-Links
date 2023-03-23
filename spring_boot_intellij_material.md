@@ -232,3 +232,17 @@ That is a real-time use case of @Bean.
 
 Let me know if this clears your doubt.
 
+
+## when to use singelton scope and when to use prototype scope when building enterprise Application?
+
+In general, most apps tend to use singleton scope since they want to share a single instance of a backend object. For example a data access object (DAO). One single DAO to be used by all beans in the application. Singleton scope is the most common scope you will see used in real-world applications
+
+Prototype scope is making use of objects that have unique values and must maintain state. Prototype is rarely used in real-world applications. Here is an online discussion of some who developers who had use cases for prototype scope. The discussion also includes a post from a former SpringSource employee on this thoughts of prototype scope.
+
+Please visit these links below for more informations
+
+https://stackoverflow.com/questions/9664810/spring-prototype-scope-use-cases
+
+https://stackoverflow.com/questions/21969044/when-to-use-spring-prototype-scope
+
+https://stackoverflow.com/questions/16058365/what-is-difference-between-singleton-and-prototype-bean
