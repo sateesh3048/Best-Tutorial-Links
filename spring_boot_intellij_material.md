@@ -125,3 +125,18 @@ Spring IOC
 The IOC Design Pattern
 
 - https://en.wikipedia.org/wiki/Inversion_of_control
+
+
+## what is the use of IOC ?
+ IOC (inversion of control) does several things for us:
+
+    1. Decouples components and layers in the system
+    2. Alleviates a component from being responsible for managing it's dependencies
+    3. Enables us to swap dependency implementations in different environments w/o breaking our code.
+    4. Allows a component be tested through mocking of dependencies.
+    5. Provides a mechanism for sharing resources throughout an application.
+
+
+You can read more about IOC here: https://en.wikipedia.org/wiki/Inversion_of_control
+
+and here: https://stackoverflow.com/questions/3058/what-is-inversion-of-control?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
