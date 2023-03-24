@@ -580,4 +580,36 @@ The objects will be in separate containers. No overlap or conflict.
 
 Yes, the beans are stored in memory just like regular java objects.
 
-## 
+## What happens when we create two or more beans using annotations in two different packages but with the same and without passing any id ?
+
+
+Suppose I have a java class in org.example.services package as followed
+
+    @Component
+    public class CricketCoach {
+        public String getDailyFortune() {
+            return "Hello world";
+        }
+    }
+
+and another class with the same name in org.example.demo as followed
+
+    @Component
+    public class CricketCoach {
+        public String getDailyWorkout() {
+            return "Hello world";
+        }
+    }
+
+Why does it throw an error and is there any way to solve this ambiguity other than passing a specific id to both?
+
+
+Answer -
+
+no not really, look at it as a CSS, you cannot use the same ID twice.
+
+The same is applied here.
+
+You can rename them to ServiceCricketCoach and DemoCricketCoach.
+
+No matter if they are in different packages, they are all going to the Spring container with their ID values, if they match when they meet, you will get an exception.
