@@ -495,3 +495,24 @@ Beans and components are created at the runtime. So when app starts all defined 
 
 https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/beans.html#beans-dependency-resolution
 
+
+## why it is named as component annotation while the actual meaning of the annotation is to treat the bean as special spring bean?
+
+The Spring Dev team choose the term @Component since it is a generic term. Similar to how in the Java language you have "java.lang.Object" as a parent class .... just a generic term.
+
+## When we use annotations, what kind of scope is our beans?
+
+When using @Component, the default scope is singleton. If you'd like to specify a different scope then you can add the @Scope attribute.
+
+    @Component
+    @Scope("prototype")
+    public class TrackCoach ...
+
+I cover this later in the course in Section 9, Lecture 72.
+
+You can also get more details on @Scope using the link below
+
+- http://docs.spring.io/spring-statemachine/docs/current/reference/html/sm-scopes.html
+
+
+## 
