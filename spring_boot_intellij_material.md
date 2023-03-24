@@ -427,4 +427,20 @@ Also, you may wonder what happens if there are multiple matches (for example mul
 https://docs.spring.io/spring-framework/docs/3.0.0.M3/reference/html/ch04s04.html
 
 
+##  Singleton scope VS Prototype Scope ?
 
+    Prototype scope = A new object is created each time it is injected/looked up. It will use new SomeBean() each time.
+
+    Singleton scope = The same object is returned each time it is injected/looked up. Here it will instantiate one instance of SomeBean and then return it each time.
+
+Prototype bean is created at the time of usage. So when you would like to have statefull beans there is strong need sometimes to have prototypes scope or when you don't wont to cache any values in beans. Prototype bean can be associated with one session or some call.
+
+Example:
+
+A data access object (DAO) is not typically configured as a prototype, because a typical DAO does not hold any conversational state; it was just easier for this author to reuse the core of the singleton diagram.
+
+So depending of how you want your beans to behave, you will use specific scope. Singleton is great for database connection ( you need to create only one ), and it would be pointless to create new bean each time using prototype.
+
+You can find more examples of them here
+
+## 
