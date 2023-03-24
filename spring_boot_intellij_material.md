@@ -443,4 +443,38 @@ So depending of how you want your beans to behave, you will use specific scope. 
 
 You can find more examples of them here
 
-## 
+## Why does bean instantiation happens before dependencies injection?
+
+I think bean instantiation is like building a car, and dependencies injection is like putting different car parts (engine, tire ...) together.
+
+How can you build a car before you got all the needed parts?
+
+The bean is created first. Then we inject the dependencies.
+
+In simple terms, here is a real world analogy
+
+You want to move your family into a brand new house built from scratch. This is the process
+
+Step 1:  Construct the house (build the house from scratch ... from the ground up. This is instantiating/constructing the object)
+
+Step 2: Move your furniture and family into the house (inject your dependencies)
+
+
+The key point is that you have to instantiate/construct the object first before injecting dependencies. The same as you have to build a house first before you can move in your furniture.
+
+>> How can we create an object without supplying its constructor arguments?
+
+Spring can create an object using the no-argument constructor.
+
+Coach myCoach = new TrackCoach();
+
+
+Then Spring will inject the dependencies using either field injection or setter/method injection. Here's an example using setter injection
+
+myCoach.setFortuneService(new HappyFortuneService());
+
+
+If you are using constructor injection, then Spring will pass the dependencies during construction.
+
+Coach myCoach = new TrackCoach(new HappyFortuneService());
+
