@@ -515,4 +515,6 @@ You can also get more details on @Scope using the link below
 - http://docs.spring.io/spring-statemachine/docs/current/reference/html/sm-scopes.html
 
 
-## 
+## https://stackoverflow.com/questions/16351780/where-should-service-annotation-be-kept-interface-or-implementation
+
+
