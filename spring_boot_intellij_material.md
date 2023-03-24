@@ -410,4 +410,16 @@ Correct.
       </build>
     </project>
     
-    ## 
+    ### How does spring know that it needs to build a cricketcoach here?
+    
+    WHat I am wondering is how Spring is able to know that we wanted to make a cricketcoach object here. We defined in the constructor that we can make Coach objects, but how does Spring know, in this case, that we want to make a CricketCoach object and use it's method of getDailyWorkout? We did not specify that we wanted a cricketCoach so it just seems to me that Spring had to guess as that was the only viable class that was implementing Coach. But what if you had more classes that implemented Coach?
+    
+    Answer :-
+    
+    Spring will scan for all Spring Beans (classes that have @Component annotation). It will determine if any of these classes implement the Coach interface. If Spring finds one then it will inject the bean. In our example, we only have one class CricketCoach that is annotated with @Component and implements the Coach interface. Hence, Spring will select the CricketCoach and then inject it.
+
+If there were no matches, then Spring will throw an exception and fail to start. You can test this scenario by commenting out the @Component annotation on the CricketCoach class.
+
+Also, you may wonder what happens if there are multiple matches (for example multiple Coach implementations: CricketCoach, TrackCoach, TennisCoach etc). Then Spring will not know which one to use ... it will throw an exception ... and fail to start. We cover this exact scenario a bit later in the videos and make use of a solution using @Qualifier annotation.
+
+
