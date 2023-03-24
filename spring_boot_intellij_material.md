@@ -484,3 +484,14 @@ Hi, I want to know why is there a need to close the context at very first place.
 Ans:- Since the app context is a ResourceLoader (i.e. I/O operations) it consumes resources that need to be freed at some point. It is also an extension of AbstractApplicationContext which implements Closable.
 
 Therefore if you leave it open at some point you will run out of resources and your application will crash.
+
+
+## difference between dependency injection and autowiring ?
+https://stackoverflow.com/questions/34442034/difference-between-dependency-injection-and-autowiring
+
+## I was thinking the bean gets created when we call the context.getBean() but it looks like the all the bean gets created when the context is created. So the bean will be created even if we dont call getBean() for that bean ?
+
+Beans and components are created at the runtime. So when app starts all defined beans are created and ready to use.
+
+https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/beans.html#beans-dependency-resolution
+
