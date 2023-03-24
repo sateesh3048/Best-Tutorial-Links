@@ -478,3 +478,9 @@ If you are using constructor injection, then Spring will pass the dependencies d
 
 Coach myCoach = new TrackCoach(new HappyFortuneService());
 
+## Why do we destroy the bean ?
+Hi, I want to know why is there a need to close the context at very first place. What happens if we keep it open.?
+
+Ans:- Since the app context is a ResourceLoader (i.e. I/O operations) it consumes resources that need to be freed at some point. It is also an extension of AbstractApplicationContext which implements Closable.
+
+Therefore if you leave it open at some point you will run out of resources and your application will crash.
