@@ -422,4 +422,9 @@ If there were no matches, then Spring will throw an exception and fail to start.
 
 Also, you may wonder what happens if there are multiple matches (for example multiple Coach implementations: CricketCoach, TrackCoach, TennisCoach etc). Then Spring will not know which one to use ... it will throw an exception ... and fail to start. We cover this exact scenario a bit later in the videos and make use of a solution using @Qualifier annotation.
 
+## Bean Scopes
+
+https://docs.spring.io/spring-framework/docs/3.0.0.M3/reference/html/ch04s04.html
+
+
 
