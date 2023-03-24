@@ -517,4 +517,67 @@ You can also get more details on @Scope using the link below
 
 ## https://stackoverflow.com/questions/16351780/where-should-service-annotation-be-kept-interface-or-implementation
 
+## why no semicolon after @Component("")
 
+An annotation is used like a modifier and is placed before the annotated item without a semicolon. (A modifier is a keyword such as public or static.) The name of each annotation is preceded by an @ symbol.
+
+@Component is an annotation and should not end with semicolon.
+
+Here's a tutorial on Annotations: https://docs.oracle.com/javase/tutorial/java/annotations/
+
+## init method vs constructor
+Chad -- I'm trying to understand, why would you use an init method in the bean, versus creating the init method and calling in the class constructor? What is the pro/con to both methods? 
+
+The init-method can do additional work after the constructor is executed.
+
+Think of it as adding an "additional stage" to the initialization process.
+
+Here's an example / analogy.
+
+A new employee is hired at a company.  Normally, the new employee is hired by HR ... but then they still need to do more on-boarding for them: security badge, issue laptop, assign cubicle, schedule them for newbie training, join company baseball team.
+
+So you can think of the hiring process by HR as the "constructor".
+
+Then all of the additional on-boarding activities can be part of the "init" method.
+
+## Single or multiple spring container?
+
+1. When will the spring contianer be created? is it when we start the spring or when we load certain spring configuration file. 
+2. Since there are 3 configuration files at the momement will there be 3 spring contianer created or 1 ?
+3. If I configure 1 object (ex: Trackcoach) as singleton in 1 config file and same object as prototype in another config file.  
+will there be 2 instances created in separate container when i load the configuration files. 
+4. where will the instantiated beans be stored? I mean will it be stored in heap like regular java objects?
+
+>> 1. When will the spring contianer be created? is it when we start the spring or when we load certain spring configuration file. 
+
+When using XML configuration, the Spring container is created when you explicitly create it with code like this:
+
+            ClassPathXmlApplicationContext context = 
+                    new ClassPathXmlApplicationContext("applicationContext.xml");
+
+
+>> 2. Since there are 3 configuration files at the momement will there be 3 spring contianer created or 1 ?
+
+If you load three separate configuration files, you will have 3 separate Spring containers created. See example below: contextOne, contextTwo, contextThree are variables for the 3 separate Spring containers.
+
+            ClassPathXmlApplicationContext contextOne = 
+                    new ClassPathXmlApplicationContext("applicationContext.xml");
+     
+            ClassPathXmlApplicationContext contextTwo = 
+                    new ClassPathXmlApplicationContext("beanLifeCycle-applicationContext.xml");
+     
+            ClassPathXmlApplicationContext contextThree = 
+                    new ClassPathXmlApplicationContext("beanScope-applicationContext.xml");
+
+
+>> 3. If I configure 1 object (ex: Trackcoach) as singleton in 1 config file and same object as prototype in another config file.  
+will there be 2 instances created in separate container when i load the configuration files. 
+
+
+The objects will be in separate containers. No overlap or conflict.
+
+>> 4. where will the instantiated beans be stored? I mean will it be stored in heap like regular java objects?
+
+Yes, the beans are stored in memory just like regular java objects.
+
+## 
