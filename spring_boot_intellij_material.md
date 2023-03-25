@@ -613,3 +613,63 @@ The same is applied here.
 You can rename them to ServiceCricketCoach and DemoCricketCoach.
 
 No matter if they are in different packages, they are all going to the Spring container with their ID values, if they match when they meet, you will get an exception.
+
+
+## Component scan with prototype scope
+In case of component scan where should I mention scope parameter if I want it to be prototype?
+
+ou place the @Scope annotation at the top of the desired class.
+
+Here is a code example
+
+    @Component
+    @Scope("prototype")
+    public class TennisCoach implements Coach {
+        ...
+    }
+
+---
+
+Details here:
+
+
+Spring Reference Manual
+7.10.7 Providing a scope for autodetected components
+http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#beans-scanning-scope-resolver
+
+Also, here's a list of bean scopes you can use
+http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#beans-factory-scopes
+
+## What is the use of AnnotationConfigApplicationContext ?
+
+What is the use of AnnotationConfigApplicationContext ? Is it a replacement to ClassPathXmlApplicationContext when we are not using XML ? 
+
+Bean in spring can be created in java file instead of XML,too. They are created with the help of @Configuration. And that application configuration is loaded by AnnotationConfigApplicationContext in spring container. AnnotationConfigApplicationContext has the register method that accepts the bean configuration class. AnnotationConfigApplicationContext provides the method getBean to get the bean object. 
+
+## What does tomcat do behind the scene?
+
+When we run an Spring application, we create a configuration file containing bean (xml/java class whatever it is) with bean id. To run our application we create a main class having main method call the configuration file/class and get bean from the Spring container. To do so we write the following code:
+
+![image](https://user-images.githubusercontent.com/1171883/227669758-d4524979-fb55-472a-95ce-f3442b2006e6.png)
+
+But when we develop a Spring MVC Web application, we run our project via tomcat server and does not write anything to read 1. config file, 2. get bean etc.
+
+I think tomcat does something behind the scene to get bean and inject dependencies.
+
+We use annotation to inject dependencies to tell Spring that "my project needs this dependencies". but to inject this Spring needs to get the bean?
+
+If we did not write any code like the given file, who will convey this message to Spring?
+
+This is what happens behind the scenes
+
+1. Tomcat starts up
+
+2. Tomcat reads the web.xml for each application deployed
+
+3. Tomcat loads the servlets specified in web.xml
+
+4. As you can see from image below, the web.xml file contains a reference to the Spring servlet and config file to load beans and inject dependencies.
+
+![image](https://user-images.githubusercontent.com/1171883/227669771-c74ad444-5019-408d-812c-3cbfc044c1be.png)
+
+## 
