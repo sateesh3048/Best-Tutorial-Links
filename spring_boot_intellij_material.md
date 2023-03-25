@@ -672,4 +672,8 @@ This is what happens behind the scenes
 
 ![image](https://user-images.githubusercontent.com/1171883/227669771-c74ad444-5019-408d-812c-3cbfc044c1be.png)
 
-## 
+## why are we giving the first letter of class name as lowercase in @qualifier
+
+Spring creates an instance of the bean and assigns it a default bean id value. While assigning default bean id
+its following that convention i.e first letter of the class name should be in lower case.
+
