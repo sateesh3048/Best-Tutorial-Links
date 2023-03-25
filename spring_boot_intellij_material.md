@@ -677,3 +677,16 @@ This is what happens behind the scenes
 Spring creates an instance of the bean and assigns it a default bean id value. While assigning default bean id
 its following that convention i.e first letter of the class name should be in lower case.
 
+## Doubt related to sequence of constructor calling
+For beans without dependencies, there is no documented order on which constructor is called first. However, dependency beans will be created before they are injected.
+
+For example, if DemoController has a dependency on CricketCoach, then Spring will create CricketCoach before it creates DemoController ... since DemoController constructor has a reference to CricketCoach.
+
+However, if you would like to control the order then you can make use of @DependsOn annotation.
+
+Here is a blog post on this topic.
+
+Controlling Bean Creation Order with @DependsOn Annotation
+https://www.baeldung.com/spring-depends-on
+
+## 
