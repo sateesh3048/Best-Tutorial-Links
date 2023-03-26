@@ -40,6 +40,30 @@ This happens behind the scenes by Hibernate.
 
 This requirement is documented in the Hibernate Users Guide.
 
-If your class doesn't have any constructors with arguments, then java will give  you default no-arg constructor for free. in that case, you don't need to add one.
+If your class doesn't have any constructors with arguments, then jvm will give  you default no-arg constructor for free. in that case, you don't need to add one.
+
+**certainly jvm creates default constructor if you have not defined any constructor in your class. but if you have defined any argument constructor in your class then jvm will not automatically add default constructor. constructor allocates memory for object when it calls super class or object class constructor so here jvm knows class already have one constructor so it doesn't add new**.
+
+here we have added no argument constructor so if you create object without passing any argument then it will not be able to call constructor to create object and throw error.
 
 
+Hibernate requires a no-arg constructor. Either one you create or the free one.
+
+Here are the rules regarding constructors in relationship to Hibernate.
+
+1. If your class does not define any constructors, Java will give you a no-arg constructor for free. There is no need to explicitly declare a no arg constructor.
+
+2. **If your class defines a constructor with arguments, then Java will NOT give a no-arg constructor. In this case, you MUST explicitly define a no-arg constructor in your class.**
+
+## What is the difference between @Entity(name="student") and @Table(name="student"). Are the performing the same result?
+
+@Entity: Specifies that the class is an entity. This annotation is applied to the entity class.
+
+Source: http://docs.oracle.com/javaee/7/api/javax/persistence/Entity.html
+
+
+@Table: Specifies the primary table for the annotated entity. 
+
+Source: http://docs.oracle.com/javaee/7/api/javax/persistence/Table.html
+
+## 
