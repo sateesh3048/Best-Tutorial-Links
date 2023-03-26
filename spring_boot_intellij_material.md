@@ -689,4 +689,39 @@ Here is a blog post on this topic.
 Controlling Bean Creation Order with @DependsOn Annotation
 https://www.baeldung.com/spring-depends-on
 
-## 
+## When do we use postConstruct and preDestroy?
+
+I have few doubts
+
+1) When do we use postConstruct and preDestroy?
+
+2) How are these methods different from constructor and destructor?
+
+3) Whether constructor is called first or postConstruct and similarly at the time of destruction destructor will be called first or preDestroy?
+
+Answers :-
+
+
+>> 1) When do we use postConstruct and preDestroy?
+
+![image](https://user-images.githubusercontent.com/1171883/227752037-79cbee99-bf3c-412b-b2f4-147745b5f8d5.png)
+
+>> 2) How are these methods different from constructor and destructor?
+
+Constructor is called when you create an instance of a class. **The postConstructor is called after the constructor. It gives you a chance to perform follow-up activities**.
+
+I like to use the analogy in house construction.  **The constructor is when your house is built. The postConstruct is when you move in and decorate the house to your personal tastes.**
+
+postContruct is called after the constructor.
+
+Java does not have the concept of a traditional destructor.
+
+**The preDestroy method is called when the Spring application context is closed ... this normally happens when you stop your Spring application.**
+
+
+>> 3) Whether constructor is called first or postConstruct and similarly at the time of destruction destructor will be called first or preDestroy?
+
+See the answers to #2
+
+
+
