@@ -66,4 +66,109 @@ Source: http://docs.oracle.com/javaee/7/api/javax/persistence/Entity.html
 
 Source: http://docs.oracle.com/javaee/7/api/javax/persistence/Table.html
 
-## 
+## which is the best approach for deleting objects among HQL and other?
+
+Delete using the HQL is most efficient. with this approach, you do not have to load object into memory first ... saves you a step.
+
+For efficiency and performance, I'd recommend deleting using HQL. This will cover the case if the object id exists or not.
+In  case of deleting directly using HQL .... it works similar to regular SQL .... no exceptions for non-existent objects.
+
+Now, if you tried to retrieve a non-existent object, you will encounter errors.
+
+If you tried to retrieve a non-existent: 
+
+Student tempStudent = session.get(Student.class, 99999);    // this returns a null object
+
+
+
+Student tempStudent = session.load(Student.class, 99999);    // returns a proxy object ... the proxy object will throw exception on first access
+
+Details on retrieving non-existent objects can be found here:
+
+https://www.mkyong.com/hibernate/different-between-session-get-and-session-load/
+
+## How / When does Hibernate call setters and getters?
+
+When we call 
+Employee employee = session.get(Employee.class, 2);
+It calls the default constructor, so I think Hibernate then calls setters behind the scene to set all the fields retrieved from the database. Is this correct? If so, why I can't see the output from System.out.println in console? (I have added System.out.println in every setter method so as to track the progress).
+
+**Answer :-**
+
+Hibernate has two ways to access data for an entity
+
+1. field access
+
+2. method access (getter/setter)
+
+---
+
+1. field access:
+This is the default. Hibernate will access the fields directly using introspection and reflection. Hibernate can directly update the fields regardless of visibility (public, private protected). In this case, the getter/setter methods are not called. That's why you never see the sysout println statements in your code.
+
+2. method access (getter/setter)
+In this case, Hibernate will only access data via the getter/setter methods in the entity.
+
+---
+
+Here's a good example that shows how to set this up
+
+@Access in Hibernate Annotation
+
+https://www.concretepage.com/hibernate/access-hibernate-annotation
+
+---
+
+This is discussed in Section 2.5.2 of Hibernate User Guide
+
+https://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernate_User_Guide.html#entity-pojo-accessors
+
+And section 2.5.12
+https://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernate_User_Guide.html#access
+
+
+## How can i create a parameterized update or delete statement in hibernate?
+
+How can i create a parameterized update or delete statement in order to avoid sql injection in case of using string concatenation?
+
+**Ans :-**
+
+A common misconception is to think that since you are using JPA or Hibernate you are automatically safe.
+
+This post from stack overflow contains some examples of using bind parameters: https://stackoverflow.com/questions/14102334/how-to-prevent-sql-injection-with-jpa-and-hibernate/54122517 and should be helpful to you.
+
+Also check:
+
+https://vladmihalcea.com/a-beginners-guide-to-sql-injection-and-how-you-should-prevent-it/
+
+and
+
+https://www.baeldung.com/sql-injection
+
+## Session lifecycle
+In which situations do we need a new session? In which cases should we commit a session and ask for the other from session factory?
+
+We are not creating new sesion in this example. We are just getting the session instance reference from the Session Factory.
+
+The Session object is lightweight and designed to be instantiated each time an interaction is needed with the database
+
+**The session objects should not be kept open for a long time because they are not usually thread safe and they should be created and destroyed them as needed.**
+
+commit is to end your current transaction and make permanent all changes performed in the transaction.
+
+Here's a discussion on the commit: https://www.udemy.com/spring-hibernate-tutorial/learn/lecture/5117020#questions/2030708
+
+## Warnings in QueryStudentDemo.class
+
+Is there any possibility to avoid warnings in QueryStudentDemo.class? 
+
+This warning appear always when I create new query:
+
+Type safety: The expression of type List needs unchecked conversion to 
+ conform to List<Student>
+  
+  Ans :-
+  
+  You can add Student.class argument to the method call, like:  session.createQuery("from Student", Student.class).getResultList();
+ 
+##
