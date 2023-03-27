@@ -163,12 +163,23 @@ Here's a discussion on the commit: https://www.udemy.com/spring-hibernate-tutori
 Is there any possibility to avoid warnings in QueryStudentDemo.class? 
 
 This warning appear always when I create new query:
-
+````
 Type safety: The expression of type List needs unchecked conversion to 
  conform to List<Student>
   
   Ans :-
   
   You can add Student.class argument to the method call, like:  session.createQuery("from Student", Student.class).getResultList();
- 
-##
+ ````
+## Who is responsible for creating the JDBC?
+
+t's obvious that it's not mySQL who creates the JDBC. It's also not Spring Boot since Spring Boot only detects the JDBC based on the given URL. Then how is the Java database connectivity created in the first place? Who's responsible for doing that?
+
+**Ans**-
+Actually, it is Spring Boot that is responsible for creating the JDBC connection. In simple terms, Spring Boot will autoconfigure the JDBC connection based on the application.properties file and entries in the pom.xml file.
+
+If you'd like more details on how this works behind the scenes, see following blog post
+
+How Spring Boot’s Autoconfigurations Work
+
+## 
