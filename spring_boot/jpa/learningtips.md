@@ -1,3 +1,5 @@
+https://www.quora.com/How-can-I-remember-everything-I-see-in-YouTube-video-lectures
+
 90% course retention :-
 
 1) Step1 :- You should practise code along with instructor.
