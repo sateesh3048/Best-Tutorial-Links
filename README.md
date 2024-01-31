@@ -1,4 +1,7 @@
 
+# Success Mantra of Rich Peope
+# Why Rich people Reads?
+
 If you read more then you gain more knowledge and you can earn more money also. This is the secret of successful people. Warren buffets spends 80% of his daily time in reading.
 Mark zuckerbarg has taken the challenge of reading 2 books per week.
 
@@ -16,7 +19,6 @@ If someone as busy as Zuckerberg can find the time to read two books per week, y
 
 Gates still sees reading as his primary avenue to learning and understanding. He doesn't use a tablet, either, preferring the feel of an actual printed book
 https://www.inc.com/james-paine/5-billionaires-who-credit-their-success-to-reading.html
-# Why Rich people Reads?
 
 Once an interviewer asked Warren Buffett the secret of his success, and he said that he reads more than **500 pages every day**. Not only Warren Buffett but every successful person reads books.
 Elon Musk, the richest man in the world, **read more than 10 hours a day in his young age**. Bill Gates **reads more than 50 books in a year**, From 1995 to 2017, he held the Forbes title of the richest person in the world every year except from 2010 to 2013.
