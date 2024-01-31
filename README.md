@@ -1,6 +1,21 @@
 
-If you read more then you gain more knowledge and you can earn more money also. This is the secret of successful people.
+If you read more then you gain more knowledge and you can earn more money also. This is the secret of successful people. Warren buffets spends 80% of his daily time in reading.
+Mark zuckerbarg has taken the challenge of reading 2 books per week.
 
+Jeff bezos amazon found is avid reader, reads more books.
+
+Munger jokes that he reads so much, his children think he's "a book with a couple of legs sticking out."
+
+Warren and I do more reading and thinking and less doing than most people in business. We do that because we like that kind of a life. 
+
+Elon musk is used to read read as many as two books per day.
+
+When asked how he learned how to build rockets, Musk gives a simple answer: "I read books."
+
+If someone as busy as Zuckerberg can find the time to read two books per week, you should be able to do this, as well.
+
+Gates still sees reading as his primary avenue to learning and understanding. He doesn't use a tablet, either, preferring the feel of an actual printed book
+https://www.inc.com/james-paine/5-billionaires-who-credit-their-success-to-reading.html
 # Why Rich people Reads?
 
 Once an interviewer asked Warren Buffett the secret of his success, and he said that he reads more than **500 pages every day**. Not only Warren Buffett but every successful person reads books.
